@@ -34,8 +34,8 @@ Get available languages list:
 java -jar swagger-codegen-cli.jar langs
 ```
 
-Generate python package from `prepared.json` in directory `out/python`:
+Generate python package `klcient` from `prepared.json` to directory `out/python`:
 
 ```bash
-java -jar swagger-codegen-cli.jar generate -i prepared.json -l python -o out/python
+java -jar swagger-codegen-cli.jar generate -c config.json -i prepared.json -l python -o out/python
 ```
