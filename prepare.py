@@ -42,6 +42,8 @@ def prepare(source, output):
     else:
         raise RuntimeError(f'Unreachable source {source}')
 
+    print(f'prepare openapi from {source}')
+
     paths_list = [
         '/api/v0.2/workspace/{workspace}/serving/{serving}',
         '/api/v0.2/workspace/{workspace}/serving/{serving}/disable',
@@ -56,6 +58,7 @@ def prepare(source, output):
         'models.Serving': True,
         'mlapp.Serving': True,
         'models.InferenceVersion': True,
+        'models.Arbitrary': True,
         'inference.RunServingRequest': True,
     }
 
@@ -66,8 +69,6 @@ def prepare(source, output):
     definitions = {}
 
     while True:
-        # ml = len(modelList.keys())
-        # definitions = {}
         ml_keys = list(model_list.keys())
         for i in ml_keys:
             definitions[i] = data['definitions'][i]
@@ -89,8 +90,8 @@ def prepare(source, output):
                 paths[key_path][key_m]['tags'].remove('Workspace')
 
             paths[key_path][key_m]['security'] = [
-                {'bearerAuth': []}
-                , {'Bearer': []}
+                # {'bearerAuth': []},
+                {'Bearer': []}
             ]
 
     data['definitions'] = definitions
@@ -130,7 +131,5 @@ if __name__ == '__main__':
     )
 
     args = parser.parse_args()
-    kwargs = vars(args)
-    kwargs['show_image'] = False
 
     prepare(source=args.source, output=args.output)
