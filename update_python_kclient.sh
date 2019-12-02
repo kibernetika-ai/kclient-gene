@@ -8,4 +8,4 @@ cp -r out/python/kclient/api ../python-kclient/kclient/api
 cp -r out/python/kclient/models ../python-kclient/kclient/models
 cp -r out/python/kclient/*.py ../python-kclient/kclient
 cp -r out/python/docs ../python-kclient/docs
-cp -r out/python/*.md ../python-kclient
+cp out/python/*.md ../python-kclient
