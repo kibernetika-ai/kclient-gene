@@ -50,9 +50,7 @@ def prepare(source, output):
         '/api/v0.2/workspace/{workspace}/serving/{serving}/enable',
         '/api/v0.2/workspace/{workspace}/inference/{inference}/versions/{version}',
         '/api/v0.2/workspace/{workspace}/inference/{inference}/versions/{version}/start',
-        '/api/v0.2/workspace/{workspace}/serving/{serving}/tfproxy/{port}/{model}',
-        '/api/v0.2/workspace/{workspace}/serving/{serving}/tfproxy/{port}/{model}/{signature}',
-        '/api/v0.2/workspace/{workspace}/serving/{serving}/tfproxy/{port}/{model}/{signature}/{version}',
+        '/api/v0.2/workspace/{workspace}/serving/{serving}/proxy',
     ]
     model_list = {
         'models.Serving': True,
