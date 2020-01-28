@@ -51,6 +51,7 @@ def prepare(source, output):
         '/api/v0.2/workspace/{workspace}/inference/{inference}/versions/{version}',
         '/api/v0.2/workspace/{workspace}/inference/{inference}/versions/{version}/start',
         '/api/v0.2/workspace/{workspace}/serving/{serving}/proxy',
+        '/api/v0.2/workspace/{workspace}/serving/{serving}/projresult/job/{job}'
     ]
     model_list = {
         'models.Serving': True,
@@ -58,6 +59,7 @@ def prepare(source, output):
         'models.InferenceVersion': True,
         'models.Arbitrary': True,
         'inference.RunServingRequest': True,
+        'application.ProjectServingJob': True,
     }
 
     paths = {}
