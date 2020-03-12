@@ -51,7 +51,11 @@ def prepare(source, output):
         '/api/v0.2/workspace/{workspace}/inference/{inference}/versions/{version}',
         '/api/v0.2/workspace/{workspace}/inference/{inference}/versions/{version}/start',
         '/api/v0.2/workspace/{workspace}/serving/{serving}/proxy',
-        '/api/v0.2/workspace/{workspace}/serving/{serving}/projresult/job/{job}'
+        '/api/v0.2/workspace/{workspace}/serving/{serving}/projresult/job/{job}',
+        '/api/v0.2/workspace/{workspace}/mlmodel',
+        '/api/v0.2/workspace/{workspace}/mlmodel/{mlmodel}',
+        '/api/v0.2/workspace/{workspace}/mlmodel/{mlmodel}/versions',
+        '/api/v0.2/workspace/{workspace}/mlmodel/{mlmodel}/versions/{version}',
     ]
     model_list = {
         'models.Serving': True,
@@ -60,6 +64,10 @@ def prepare(source, output):
         'models.Arbitrary': True,
         'inference.RunServingRequest': True,
         'application.ProjectServingJob': True,
+        'models.CatalogItemObj': True,
+        'models.ApplicationModel': True,
+        'models.ApplicationModelVersionStoredData': True,
+        'application.ApplicationModelVersion': True,
     }
 
     paths = {}
